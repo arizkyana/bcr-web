@@ -8,16 +8,6 @@ export const SearchForm = () => {
   const [price, setPrice] = useState();
   const [status, setStatus] = useState();
 
-  const renderBackNavigation = () => (
-    <div>
-      <Link to="/">
-        <Button type="button" variant="light">
-          Back
-        </Button>
-      </Link>
-    </div>
-  );
-
   const renderFormData = () => (
     <div>
       <h2>Form Data</h2>
@@ -49,12 +39,11 @@ export const SearchForm = () => {
   };
 
   return (
-    <Container className="py-3">
-      {renderBackNavigation()}
+    <Container className="py-3 search-form">
       <Card className="p-3 my-5">
         <Form onSubmit={(e) => onSubmit(e)}>
           <Row>
-            <Col>
+            <Col lg={3} sm={12}>
               <Form.Group>
                 <Form.Label>Nama Mobil</Form.Label>
                 <Form.Control
@@ -65,7 +54,7 @@ export const SearchForm = () => {
                 ></Form.Control>
               </Form.Group>
             </Col>
-            <Col>
+            <Col lg={3} sm={12}>
               <Form.Group>
                 <Form.Label>Kategori</Form.Label>
                 <Form.Select
@@ -79,7 +68,7 @@ export const SearchForm = () => {
                 </Form.Select>
               </Form.Group>
             </Col>
-            <Col>
+            <Col lg={3} sm={12}>
               <Form.Group>
                 <Form.Label>Harga</Form.Label>
                 <Form.Select
@@ -93,35 +82,27 @@ export const SearchForm = () => {
                 </Form.Select>
               </Form.Group>
             </Col>
-            <Col>
-              <Form.Group>
-                <Form.Label>Status</Form.Label>
-                <Form.Select
-                  className="search-input"
-                  onChange={(e) => setStatus(e.target.value)}
-                >
-                  <option value="">Pilih Status</option>
-                  <option value="1">Disewa</option>
-                  <option value="2">Tersedia</option>
-                </Form.Select>
-              </Form.Group>
-            </Col>
-            <Col>
-              <Form.Group
-                className="d-flex justify-content-start align-items-end"
-                style={{
-                  height: "100%",
-                }}
-              >
+            <Col lg={3} sm={12}>
+              <div className="d-flex align-items-end gap-3">
+                <Form.Group className="flex-fill">
+                  <Form.Label>Status</Form.Label>
+                  <Form.Select
+                    className="search-input"
+                    onChange={(e) => setStatus(e.target.value)}
+                  >
+                    <option value="">Pilih Status</option>
+                    <option value="1">Disewa</option>
+                    <option value="2">Tersedia</option>
+                  </Form.Select>
+                </Form.Group>
                 <Button type="submit" variant="success">
                   Cari Mobil
                 </Button>
-              </Form.Group>
+              </div>
             </Col>
           </Row>
         </Form>
       </Card>
-      {renderFormData()}
     </Container>
   );
 };

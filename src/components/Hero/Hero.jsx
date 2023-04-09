@@ -1,6 +1,10 @@
 import { Container } from "react-bootstrap";
+import { RentButton } from "../../pages/Home/components/RentButton";
+import PropTypes from "prop-types";
+import { SearchForm } from "../SearchForm/SearchForm";
 
-export const Hero = () => {
+export const Hero = (props) => {
+  const { withRentButton = true, withSearchForm = false } = props;
   return (
     <section
       id="hero"
@@ -11,7 +15,7 @@ export const Hero = () => {
     >
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/">
             <span className="logo"></span>
           </a>
           <button
@@ -70,22 +74,37 @@ export const Hero = () => {
                   distinctio vero, corrupti sunt ad impedit suscipit optio harum
                   aperiam natus similique esse enim totam?
                 </p>
-                <button type="button" className="btn btn-success">
-                  Mulai Sewa Mobil
-                </button>
+                {withRentButton ? <RentButton /> : <></>}
               </div>
             </div>
           </div>
           <div className="col-sm-12 col-lg-6">
             <div className="hero-image">
-              <img
-                src="./assets/images/car.png"
-                className="img-fluid object-fit-cover"
-              />
+              <picture>
+                <source
+                  media="(max-width: 575px)"
+                  srcset="./images/img_car.png"
+                />
+                <source
+                  media="(min-width: 800px)"
+                  srcset="./images/img_car@3x.png"
+                />
+                <img
+                  src="./images/img_car@3x.png"
+                  className="img-fluid object-fit-cover"
+                  alt="img_car"
+                />
+              </picture>
             </div>
           </div>
         </div>
       </Container>
+      {withSearchForm && <SearchForm />}
     </section>
   );
+};
+
+Hero.propTypes = {
+  withRentButton: PropTypes.bool,
+  withSearchForm: PropTypes.bool,
 };

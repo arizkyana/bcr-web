@@ -2,16 +2,18 @@ import { Container, Row, Col } from "react-bootstrap";
 
 export const Features = () => {
   return (
-    <section id="features" className="mb-3">
+    <section id="features" className="mb-3 py-5">
       <Container>
         <Row>
           <div className="col-sm-12 col-lg-6">
             <div className="p-5 p-lg-0">
-              <img
-                src="./assets/images/woman.png"
-                className="img-fluid object-fit-cover"
-                alt=""
-              />
+              <picture>
+                <img
+                  src="./images/img_service.png"
+                  className="img-fluid object-fit-cover"
+                  alt="img_service"
+                />
+              </picture>
             </div>
           </div>
           <div className="col-sm-12 col-lg-6">

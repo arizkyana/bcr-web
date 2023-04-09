@@ -1,6 +1,6 @@
 export const WhyUs = () => {
   return (
-    <section id="why-us" className="mb-3">
+    <section id="why-us" className="mb-3 py-5">
       <div className="container">
         <div className="text-center text-lg-start">
           <h1>Why Us?</h1>

@@ -1,10 +1,11 @@
-import { SearchForm, Backdrop } from "../../components";
+import { SearchForm, Backdrop, Hero, Footer } from "../../components";
 
 export const Search = () => {
   return (
     <>
       <Backdrop triggerClass="search-input" />
-      <SearchForm />
+      <Hero withRentButton={false} withSearchForm />
+      <Footer />
     </>
   );
 };
