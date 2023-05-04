@@ -1,4 +1,4 @@
-import { SearchForm, Backdrop, Hero, Footer } from "../../components";
+import { Backdrop, Hero, Footer } from "../../components";
 
 export const Search = () => {
   return (
