@@ -9,6 +9,7 @@ const Hero = (props) => {
     withSearchForm = false,
     withHeroContent = true,
     withSearchResultForm = false,
+    showSidebar,
   } = props;
   return (
     <section
@@ -31,6 +32,7 @@ const Hero = (props) => {
             aria-controls="offcanvasExample"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            onClick={() => showSidebar()}
           >
             <span className="navbar-toggler-icon"></span>
           </button>
